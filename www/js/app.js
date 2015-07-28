@@ -77,7 +77,7 @@ Iquotes.factory('photosFactory', function ($http) {
     return{
         getPhotos : function() {
             return $http({
-                url: 'http://ithoughs.azurewebsites.net/api/quote?applicationId=2&currentQuoteid=0&quotetype=1',
+                url: 'http://ithoughs.azurewebsites.net/api/quote?applicationId=2&currentQuoteid=0&quotetype=0',
                 method: 'GET'
             })
         }
