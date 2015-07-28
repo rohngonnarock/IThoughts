@@ -1,0 +1,53 @@
+<ion-view title="IThoughts" >
+    
+    <div class="bar bar-header bar-calm">
+        <h1 class="title">IThoughts</h1>
+    </div>
+  <ion-content>
+
+      <div class="list card">
+
+          <div class="item item-avatar">
+              <img src="http://lorempixel.com/50/50/people/">
+              <h2>{{author}}</h2>
+              <p>November {{id}}, 1955</p>
+          </div>
+
+          <div class="item item-body text-center">
+              
+              <div class="item" id="content" >
+                  <div class="card col-center row-center padding dark">{{quote}}</div>
+              </div>
+              
+              
+              <p>
+                  <a href="#" class="subdued">1 Like</a>
+                  <a href="#" class="subdued">5 Comments</a>
+              </p>
+          </div>
+
+          <div class="item tabs tabs-secondary tabs-icon-left">
+              <a class="tab-item" href="#">
+                  <i class="icon ion-thumbsup calm"></i>
+                  Like
+              </a>
+              <a class="tab-item" href="#">
+                  <i class="icon ion-chatbox calm"></i>
+                  Comment
+              </a>
+              <a class="tab-item" href="#">
+                  <i class="icon ion-share calm"></i>
+                  Share
+              </a>
+          </div>
+
+      </div>
+
+
+    <!--<ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>-->
+  </ion-content>
+</ion-view>

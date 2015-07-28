@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+#content {
+  position: relative;
+  z-index: 1;
+  height:300px;
+}
+
+#content:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(http://lorempixel.com/300/300/abstract/);
+  opacity: 0.2;
+}
