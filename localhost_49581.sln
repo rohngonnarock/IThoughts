@@ -3,24 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IQuotes", "..\..\..\..\..\..\phonegap+ionic\IQuotes\", "{4A1B3756-6C96-4E19-A3A7-BA8CD70E9E7B}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IThoughts", "http://localhost:49581", "{73DEF57B-A926-4CB2-858F-9ADD39EF9432}"
 	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_54098"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\phonegap+ionic\IQuotes\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54098\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49581"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\phonegap+ionic\IThoughts\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49581\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_54098"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\phonegap+ionic\IQuotes\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54098\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49581"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\phonegap+ionic\IThoughts\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49581\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "54098"
+		SlnRelativePath = "..\..\..\..\..\..\phonegap+ionic\IThoughts\"
 	EndProjectSection
 EndProject
 Global
@@ -28,8 +29,8 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A1B3756-6C96-4E19-A3A7-BA8CD70E9E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A1B3756-6C96-4E19-A3A7-BA8CD70E9E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73DEF57B-A926-4CB2-858F-9ADD39EF9432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73DEF57B-A926-4CB2-858F-9ADD39EF9432}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

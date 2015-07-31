@@ -19,6 +19,7 @@ Iquotes.run(function ($ionicPlatform) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+        photosFactory.getPhotos().success(function (data) { });
     });
 });
 
@@ -75,9 +76,9 @@ Iquotes.config(function ($stateProvider, $urlRouterProvider) {
 
 Iquotes.factory('photosFactory', function ($http) {
     return{
-        getPhotos : function() {
+        getPhotos : function(n) {
             return $http({
-                url: 'http://ithoughs.azurewebsites.net/api/quote?applicationId=2&currentQuoteid=0&quotetype=0',
+                url: 'http://ithoughs.azurewebsites.net/api/quote?applicationId=2&currentQuoteid='+n+'&quotetype=0',
                 method: 'GET'
             })
         }

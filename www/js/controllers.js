@@ -1,7 +1,45 @@
 angular.module('starter.controllers', [])
 
+    .controller('PlaylistsCtrl', function ($scope, photosFactory) {
+        var counter = 0;
+        
+        photosFactory.getPhotos(counter).success(function (data) {
+            $scope.quote = data.QuoteDesc;
+            $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
+            $scope.id = data.QuoteId;
+            //console.log(data);
+        });
+        
+        $scope.next = function () {
+            counter = 1;
+            photosFactory.getPhotos(counter).success(function (data) {
+                $scope.quote = data.QuoteDesc;
+                $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
+                $scope.id = data.QuoteId;
+                //console.log(data);
+            });
+        };
+        $scope.pre = function () {
+            counter = -1;
+            photosFactory.getPhotos(counter).success(function (data) {
+                $scope.quote = data.QuoteDesc;
+                $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
+                $scope.id = data.QuoteId;
+                //console.log(data);
+            });
+        };
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout, photosFactory) {
+        //$scope.playlists = [
+        //  { title: 'Reggae', id: 1 },
+        //  { title: 'Chill', id: 2 },
+        //  { title: 'Dubstep', id: 3 },
+        //  { title: 'Indie', id: 4 },
+        //  { title: 'Rap', id: 5 },
+        //  { title: 'Cowbell', id: 6 }
+        //];
+    })
+
+.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -40,29 +78,6 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
-
-.controller('PlaylistsCtrl', function ($scope, photosFactory) {
-    $scope.quote = '';
-    $scope.author = '';
-    $scope.id = '';
-
-    photosFactory.getPhotos().success(function (data) {
-        $scope.quote = data.QuoteDesc;
-        $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
-        $scope.id = data.QuoteId;
-        console.log(data);
-    });
-    
-
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
 })
 
 .controller('PlaylistCtrl', function ($scope, $stateParams) {
