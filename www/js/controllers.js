@@ -1,43 +1,44 @@
 angular.module('starter.controllers', [])
 
-    .controller('PlaylistsCtrl', function ($scope, photosFactory) {
-        var counter = 0;
-        
-        photosFactory.getPhotos(counter).success(function (data) {
+.controller('PlaylistsCtrl', function ($scope, photosFactory) {
+    var counter = 0;
+    $scope.id = 0;
+    photosFactory.getPhotos(counter, $scope.id).success(function (data) {
+        $scope.quote = data.QuoteDesc;
+        $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
+        $scope.id = data.QuoteId;
+        //console.log(data);
+    });
+
+    $scope.next = function () {
+        counter = 1;
+        console.log($scope.id);
+        photosFactory.getPhotos(counter, $scope.id).success(function (data) {
             $scope.quote = data.QuoteDesc;
             $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
             $scope.id = data.QuoteId;
             //console.log(data);
         });
-        
-        $scope.next = function () {
-            counter = 1;
-            photosFactory.getPhotos(counter).success(function (data) {
-                $scope.quote = data.QuoteDesc;
-                $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
-                $scope.id = data.QuoteId;
-                //console.log(data);
-            });
-        };
-        $scope.pre = function () {
-            counter = -1;
-            photosFactory.getPhotos(counter).success(function (data) {
-                $scope.quote = data.QuoteDesc;
-                $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
-                $scope.id = data.QuoteId;
-                //console.log(data);
-            });
-        };
+    };
+    $scope.pre = function () {
+        counter = -1;
+        photosFactory.getPhotos(counter, $scope.id).success(function (data) {
+            $scope.quote = data.QuoteDesc;
+            $scope.author = (data.AuthorName != null ? data.AuthorName : 'James Witwiki');
+            $scope.id = data.QuoteId;
+            //console.log(data);
+        });
+    };
 
-        //$scope.playlists = [
-        //  { title: 'Reggae', id: 1 },
-        //  { title: 'Chill', id: 2 },
-        //  { title: 'Dubstep', id: 3 },
-        //  { title: 'Indie', id: 4 },
-        //  { title: 'Rap', id: 5 },
-        //  { title: 'Cowbell', id: 6 }
-        //];
-    })
+    //$scope.playlists = [
+    //  { title: 'Reggae', id: 1 },
+    //  { title: 'Chill', id: 2 },
+    //  { title: 'Dubstep', id: 3 },
+    //  { title: 'Indie', id: 4 },
+    //  { title: 'Rap', id: 5 },
+    //  { title: 'Cowbell', id: 6 }
+    //];
+})
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
 
